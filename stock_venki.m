@@ -51,36 +51,6 @@ end
 
 
 
-% C=P;
-% dP=[0;diff(P)];%2 day price difference
-% pP=dP./P;%percent change
-% spP=sign(pP);%signum of day to day % change
-% n=find(spP==0);%%find no change days
-% spP(n)=sign(rand-.5);%%add small noise to no change days
-% spP=(spP+1)/2;%%convert to binary 0=down 1=up
-% %%%%filter out flat dayswith changes less than .5%
-% %%small noises and spikes are non-profitable neglected
-% for j=2:l-1
-%     if abs(pP(j))<.005
-%         spP(j)=spP(j-1);%same as prior day
-%     end
-% end
-% %%%%%%%%Mark signal change%%%%%%%%%%%%%%%%%%%%%%%%
-% %%%%%%%%find buy  signal%%
-% n=find(spP(2:end)==1);%shift back by one day 
-% buy=n;
-% %%%%%%%%find sell signal%%
-% n=find(spP(2:end)==0);%shift back by one day 
-% sell=n;
-% %%%%%%%%tradesignal
-% changemarker=xor(spP(1:end-1),spP(2:end));%finds changing signals
-% %%%%%%%%tradesignal
-% tradesignal=zeros(length(C),1);
-% tradesignal(buy)=1;
-% 
-% %set(gcf,'Color',[0,0,0])
-% set(gca,'fontsize',14);
-% title((Stocks{i}))
 
 
 
